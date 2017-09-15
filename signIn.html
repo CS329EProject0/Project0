@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz 2</title>
+</head>
+<body>
+	<h1>User Registration</h1>
+	<table>
+		<tbody>
+			<form id="textForm">
+				<tr>
+					<td><label>Username:</label>
+						<input type="text" name="userName" id="userName">
+					</td>
+				</tr>
+				<tr>
+					<td><label>Password:</label>
+						<input type="text" name="password" id="password">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button type="submit" form="textForm" value="Submit" onclick="return validate();">Register</button>
+						<input type="reset" name="reset" value="Reset">
+					</td>
+				</tr>
+			</form>
+		</tbody>
+	</table>
+
+
+
+	<script type="text/javascript">
+	document.getElementById('textForm').onsubmit = function(e) {e.preventDefault();}
+
+		function validate() {
+			var userName = document.getElementById("userName").value;
+			var password = document.getElementById("password").value;
+			if (validateUsername(userName) && validatePassword(password)) {
+				console.log("valid registration")
+				alert("Passed Validation");
+			}
+			else{
+				alert("Invalid Input");
+			}
+			
+		}
+
+		function validateUsername (userName) {
+			if (userName.length > 5 && userName.length < 11 && firstLetterCheck(userName) && alphanumCheck(userName)) {
+				console.log("userName is valid")
+				return true;
+			}
+			else {
+				console.log("userName is not valid")
+				return false;
+			}		
+		}
+
+		function firstLetterCheck (text) {
+			var letter = text.charAt(0);
+
+			if (letter >= "A" && letter <= "z") {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+
+		function alphanumCheck(text) {
+			var valid = true;
+			
+			for (var i = 0; i < text.length; i++) {
+				var letter = text.charAt(i);
+				if ((letter >="A" && letter <= "Z") || (letter >= "a" && letter <= "z") || letter >= 0 && letter <= 9) {
+						valid = true;
+					}
+				else {
+					valid = false;
+				}
+			}
+			return valid;	
+		}
+
+		function validatePassword(password) {
+			if (password.length > 5 && password.length < 11 && alphanumUnderCheck(password) && lowerUpperDigitCheck(password)) {
+				console.log("password is valid")
+				return true;
+			}
+			else {
+				console.log("password is not valid")
+				return false;
+			}
+		}
+
+
+		function alphanumUnderCheck(text) {
+			var valid = false;
+			for (var i = 0; i < text.length; i++) {
+				var letter = text.charAt(i);
+				
+				if (letter >="A" && letter <= "Z" || (letter >= "a" && letter <= "z") || letter >= 0 && letter <= 9 || letter == "_") {
+						valid = true;
+					}
+				else {
+					valid = false;
+				}
+			}
+			return valid;	
+		}
+
+		function lowerUpperDigitCheck (text) {
+			var x = 0;
+			var y = 0;
+			var z = 0;
+			var valid = false;
+			for (var i = 0; i < text.length; i++) {
+				var letter = text.charAt(i);
+				
+				if (letter >= "A" && letter <= "Z" && x == 0) {
+					x++;
+				}
+				if (letter >= "a" && letter <= "z" && y == 0) {
+					y++;
+				}
+				if (letter >= 0 && letter <= 9 && z == 0) {
+					z++;
+				}
+			}
+			if (x + y + z == 3) {
+				valid = true;
+			}
+			return valid;
+		}
+	</script>
+</body>
+</html>
