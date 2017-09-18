@@ -1,0 +1,73 @@
+<DOCTYPE! html>
+<html>
+<head>
+	<title>Profile Page</title>
+</head>
+<body>
+	<!-- Adds animated button functionality -->
+	<style>
+		.button {
+  			padding: 15px 30px;
+  			font-size: 18px;
+  			text-align: center;
+  			cursor: pointer;
+  			outline: none;
+  			color: #fff;
+  			background-color: SteelBlue;
+  			border: none;
+  			border-radius: 15px;
+  			box-shadow: 0 9px #999;
+		}
+
+		.button:hover {background-color: #3e8e41}
+
+		.button:active {
+  			background-color: #3e8e41;
+  			box-shadow: 0 5px #666;
+  			transform: translateY(4px);
+  		}
+  	</style>
+
+	<h1>Your Profile</h1>
+	<p>Tell us about yourself.</p>
+
+	<!-- This will display the user's current profile picture -->
+	<center>
+		<h2>Your profile picture</h2>
+		<img src ="fillerImage.png" alt="ProfilePic" style="width:406px;height:406px;">
+		<form action="/profile_picture_upload.php">
+			<br>
+			<input type="file" name="userProfilePic" id="userProfilePic">
+			<input type="submit" value="Upload Image" name="submit">
+		</form>
+		<br>
+	</center>
+
+	<!-- Allows the user to update their username -->
+
+	<h3>Your username</h3>
+	<center>
+	<table>
+		<tbody>
+			<form id="textForm">
+				<tr>
+					<td><label>Username:</label>
+						<input type="text" name="userName" id="userName">
+					</td>
+					<td>
+						<button class="button" button type="submit" onclick="return updateUsername();">Update Username</button>
+					</td>
+				</tr>
+			</form>
+		</tbody>
+	</table>
+	</center>
+
+	<!-- Write the code for the updateUsername function here -->
+
+
+
+
+
+</body>
+</html>
