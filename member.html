@@ -1,20 +1,66 @@
 <!DOCTYPE html>
 <html>
+<style type="text/css">
+	body {
+		background-color: #FFFFCC;
+	}
+		.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #F2910D;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
 <head>
 
 	<title>Member Page</title>
 </head>
 <body>
-	<h1>Member Page</h1>
-	<p>Link to profile setup page.<p/>
-	<button type="button">Profile!</button>
+	<div style = "text-align:center;"><div/>
+
+	<h1>Welcome to Pauline's Potluck Party Page</h1>
+	<p>Make sure you setup your profile<p/>
+	<button class="button" style="vertical-align:middle"><span>Profile</span></button>
+	<button class="button" style="vertical-align:middle"><span>RSVP now</span></button>
+
 
 	<h1>View Attendies</h1>
 	<p>Link to member/Food item document</p>
-	<button type="button">View attendies</button>
+	<button class="button" style="vertical-align:middle"><span>View Attendies</span></button>
 
-	<h1>RSVP/Un-RSVP</h1>
-	<p>Button to keep track of attendies.</p>
-	<button type="button">RSVP now</button>
+
 </body>
 </html>
