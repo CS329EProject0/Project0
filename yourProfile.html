@@ -30,6 +30,25 @@
 
 	<h1>Your Profile</h1>
 	<p>Tell us about yourself.</p>
+	<form>
+		<fieldset>
+		<legend>About Me</legend>
+		Favorite Food:
+		<input type="text" name="favoriteFood"><br>
+		Favorite Music:
+		<input type="text" name="favoriteMusic"><br>
+		Interests:
+		<input type="text" name="Interests"><br>
+		Relation to Pauline:<br>
+		<input type="radio" name="relationToPauline" value="friend">Friend <br>
+		<input type="radio" name="relationToPauline" value="family">Family <br>
+		<input type="radio" name="relationToPauline" value="co-worker">Co-worker<br>
+		<input type="radio" name="relationToPauline" value="idk">I don't know Pauline but I like to party <br>
+		<input type="radio" name="relationToPauline" value="other">Other <br>
+		<br>
+		<input type="submit" value="Update">
+		</fieldset>
+	</form>
 
 	<!-- This will display the user's current profile picture -->
 	<center>
@@ -44,9 +63,8 @@
 	</center>
 
 	<!-- Allows the user to update their username -->
-
-	<h3>Your username</h3>
 	<center>
+	<h2>Your username</h2>
 	<table>
 		<tbody>
 			<form id="textForm">
@@ -63,11 +81,15 @@
 	</table>
 	</center>
 
-	<!-- Write the code for the updateUsername function here -->
 
+	<!-- Write the code for the updateUsername function here, within the function you can create a validateUsername() function if you would like, requiring the username to be less than x characters and being alphanumeric-->
 
+	<script type="text/javascript">
+	document.getElementById('textForm').onsubmit = function(e) {e.preventDefault();}
 
+		function updateUsername() {
 
+		}
 
 </body>
 </html>
