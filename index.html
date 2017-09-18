@@ -4,17 +4,53 @@
 	body {
 		background-image: url(https://scontent.fftw1-1.fna.fbcdn.net/v/t35.0-12/21875864_843882689125792_784341185_o.jpg?oh=3adb94d0cc40e5647fda6c5a5cfa1ebf&oe=59C2CC62);
 	} 
-	
+	.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #F2910D;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
 
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
 
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 </style>
 
 <body>
 	<div style = "text-align:center;"><img src="https://i.imgur.com/KVyTWVb.png" width="1000" height="400"><div/>
 
 	<p>
-      <input type = "button" value = "Log In" />
-      <input type = "button" value = "Register" />
+		<button class="button" style="vertical-align:middle"><span>Login</span></button>
+		<button class="button" style="vertical-align:middle"><span>Register</span></button>
     </p>
 </body>
 
