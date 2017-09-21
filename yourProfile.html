@@ -31,7 +31,7 @@
 	<h1>Your Profile</h1>
 	<hr>
 	<p>Tell us about yourself.</p>
-	<form>
+	<form id = "ProfileInfo">
 		<fieldset>
 		<legend>About Me</legend>
 		Favorite Food:
@@ -47,7 +47,7 @@
 		<input type="radio" name="relationToPauline" value="idk">I don't know Pauline but I like to party <br>
 		<input type="radio" name="relationToPauline" value="other">Other <br>
 		<br>
-		<input type="submit" value="Update">
+		<input type="submit" value="Update" onclick="return updateProfileInfo()">
 		</fieldset>
 	</form>
 
@@ -84,12 +84,19 @@
 	</center>
 
 
-	<!-- Write the code for the updateUsername function here, within the function you can create a validateUsername() function if you would like, requiring the username to be less than x characters and being alphanumeric-->
+	<!-- Write the code for the updateUsername() and updateProfileInfo() here, within the updateUsername() function you can create a validateUsername() function if you would like, requiring the username to be less than x characters and/or being alphanumeric-->
 
 	<script type="text/javascript">
 	document.getElementById('textForm').onsubmit = function(e) {e.preventDefault();}
 
 		function updateUsername() {
+
+		}
+
+	<script type="text/javascript">
+	document.getElementById("ProfileInfo").onsubmit = function(e) {e.preventDefault();}
+
+		function updateProfileInfo() {
 
 		}
 
