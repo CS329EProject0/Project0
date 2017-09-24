@@ -27,12 +27,12 @@
 				</tr>
 				<tr>
 					<td><label>Re-type Password:</label>
-						<input type="password" name="confirmPassword" id="confirmassword">
+						<input type="password" name="confirmPassword" id="confirmPassword">
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<button class="button" style ="vertical-align:middle" onclick="return registerUser()"" ><span>Register</span></button>
+						<button class="button" button type="submit" style ="vertical-align:middle" onclick="return registerUser();"><span>Register</span></button>
 					</td>
 				</tr>
 			</form>
@@ -42,14 +42,16 @@
 	<script type="text/javascript">
 	document.getElementById('textForm').onsubmit = function(e) {e.preventDefault();}
 
-		function updateUsername() {
-			var password = document.getElementById('password').value
-			var confirmPassword = document.getElementById('confirmPassword').value
-			if password == confirmPassword && password.length > 7 && confimPassword.length > 7 {
-				window.location = "member.html"
+		function registerUser() {
+			alert("This works");
+			var password = document.getElementById('password').value;
+			var confirmPassword = document.getElementById('confirmPassword').value;
+			if password == confirmPassword && password.length > 7 && confimPassword.length > 7 ;{
+				window.location = "member.html";
 			} else {
-				alert("Password do not match.")
+				alert("Password do not match.");
 			}
+		}
 
 
 
