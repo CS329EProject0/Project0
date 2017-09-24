@@ -27,17 +27,30 @@
 				</tr>
 				<tr>
 					<td><label>Re-type Password:</label>
-						<input type="password" name="password" id="password">
+						<input type="password" name="confirmPassword" id="confirmassword">
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<button class = "button" style = "vertical-align:middle" onclick = "location.href='member.html'"><span>Register</span></button>
+						<button class="button" style ="vertical-align:middle" onclick="return registerUser()"" ><span>Register</span></button>
 					</td>
 				</tr>
 			</form>
 		</tbody>
 	</table>
+
+	<script type="text/javascript">
+	document.getElementById('textForm').onsubmit = function(e) {e.preventDefault();}
+
+		function updateUsername() {
+			var password = document.getElementById('password').value
+			var confirmPassword = document.getElementById('confirmPassword').value
+			if password == confirmPassword && password.length > 7 && confimPassword.length > 7 {
+				window.location = "member.html"
+			} else {
+				alert("Password do not match.")
+			}
+
 
 
 </body>
