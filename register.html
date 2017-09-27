@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<!-- calling the webDesign-->
+<link rel="stylesheet" href="webDesign.css">
+
+
+<head>
+	<title>Registration</title>
+</head>
+<body>
+
+<h1>User Registration</h1>
+	<hr>
+	<table>
+		<tbody>
+			<form id="textForm">
+				<tr>
+					<td><label>Username:</label>
+						<input type="text" name="userName" id="userName">
+					</td>
+				</tr>
+				<tr>
+					<td><label>Password:</label>
+						<input type="password" name="password" id="password">
+					</td>
+				</tr>
+				<tr>
+					<td><label>Re-type Password:</label>
+						<input type="password" name="confirmPassword" id="confirmPassword">
+					</td>
+				</tr>
+				
+			</form>
+		</tbody>
+	</table>
+
+	<p>
+		<button class="button" style="vertical-align:middle" onclick="location.href='member.html'"><span>Register</span></button>
+	</p>
+
+	<script type="text/javascript">
+	document.getElementById('textForm').onsubmit = function(e) {e.preventDefault();}
+
+		function registerUser() {
+			alert("This works");
+			var password = document.getElementById('password').value;
+			var confirmPassword = document.getElementById('confirmPassword').value;
+			if password == confirmPassword && password.length > 7 && confimPassword.length > 7 ;{
+				window.location = "member.html";
+			} else {
+				alert("Password do not match.");
+			}
+		}
+
+
+
+</body>
+</html>
