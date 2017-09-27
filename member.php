@@ -50,32 +50,47 @@
       <div id="POItablediv">
     <table id="POITable" border="1">
         <tr>
-            <td>#</td>
             <td>Name</td>
             <td>Attendance</td>
-            <td>Delete?</td>
             <td>Add Row?</td>
         </tr>
-        <tr>
+        <!-- <tr> 
             <td>1</td>
             <td><input size=25 type="text" id="latbox"/></td>
             <td><input size=25 type="text" id="lngbox" /></td>
             <td><input type="button" id="delPOIbutton" value="Delete" onclick="deleteRow(this)"/></td>
             <td><input type="button" id="addmorePOIbutton" value="Add" onclick="insRow()"/></td>
+        </tr> -->
+        <tr>
+		<form action="member.php" method="post">
+            <td>
+        		<input type="text" name="Name" placeholder="First & Last Name">
+            </td>
+            <td>
+            	<input type="radio" name="attendance" value="Yes">Yes
+            	<input type="radio" name="attendance" value="No">No
+            </td>
+            <td>
+            	<input type="submit" name="Submit" value="Add">
+            </td>
+        </form>
         </tr>
     </table>
 
     <?php
-    	function addLine() {
+	    $name = $_POST["Name"]; //You have to get the form data
+	    $attending = $_POST["attendance"];
+	    $filename = 'RSVPList.txt';
 
-    	}
+	    $fp = fopen($filename, 'a+'); //Open your .txt file
+	    fwrite($fp , $name . ":" . $attending . "\n"); //Now lets write it in there
+	    
+	    fclose($fp); //Finally close our .txt
 
-    	if (isset($_GET['addLine']) {
-    		addLine();
-    	}
+	?>
 
 
-    ?>
+
 
 
 
