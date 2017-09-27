@@ -2,10 +2,11 @@
 <html>
 
 <!-- calling the webDesign-->
-<link rel="stylesheet" href="webDesign.css">
+	<link rel="stylesheet" href="webDesign.css">
 
 <head>
 	<title>Login</title>
+	
 </head>
 <body>
 	<h1>User Login</h1>
@@ -51,7 +52,7 @@
 			var password = document.getElementById("password").value;
 			if ((userName == member) && (password == memberPassword)) {
 				console.log("valid registration")
-				window.location = 'member.html'
+				window.location = 'member.php'
 			} else if ((userName == admin) && (password == adminPassword)) {
 				console.log("valid registration")
 				window.location = 'adminPage.html'

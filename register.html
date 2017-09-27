@@ -36,7 +36,7 @@
 	</table>
 
 	<p>
-		<button class="button" style="vertical-align:middle" onclick="location.href='member.html'"><span>Register</span></button>
+		<button class="button" style="vertical-align:middle" onclick="registerUser()"><span>Register</span></button>
 	</p>
 
 	<script type="text/javascript">
@@ -46,8 +46,8 @@
 			alert("This works");
 			var password = document.getElementById('password').value;
 			var confirmPassword = document.getElementById('confirmPassword').value;
-			if password == confirmPassword && password.length > 7 && confimPassword.length > 7 ;{
-				window.location = "member.html";
+			if ((password == confirmPassword) && (password.length > 7));{
+				window.location = "member.php";
 			} else {
 				alert("Password do not match.");
 			}
