@@ -17,7 +17,12 @@
 
 
 	<h1>View Attendees</h1>
+<<<<<<< HEAD
+	<p>Link to member/Food item document</p>
+	<button class="button" style="vertical-align:middle"><span>View Attendees</span></button>
+=======
 
+>>>>>>> 7651989f685eaabea59a385e296b0b3beefa3383
 
   <center>
 <<<<<<< HEAD
@@ -64,18 +69,30 @@
       <div id="POItablediv">
     <table id="POITable" border="1">
         <tr>
-            <td>#</td>
             <td>Name</td>
             <td>Attendance</td>
-            <td>Delete?</td>
             <td>Add Row?</td>
         </tr>
-        <tr>
+        <!-- <tr> 
             <td>1</td>
             <td><input size=25 type="text" id="latbox"/></td>
             <td><input size=25 type="text" id="lngbox" /></td>
             <td><input type="button" id="delPOIbutton" value="Delete" onclick="deleteRow(this)"/></td>
             <td><input type="button" id="addmorePOIbutton" value="Add" onclick="insRow()"/></td>
+        </tr> -->
+        <tr>
+		<form action="memberAdd.php" method="post">
+            <td>
+        		<input type="text" name="Name" placeholder="First & Last Name">
+            </td>
+            <td>
+            	<input type="radio" name="attendance" value="Yes">Yes
+            	<input type="radio" name="attendance" value="No">No
+            </td>
+            <td>
+            	<input type="submit" name="Submit" value="Add">
+            </td>
+        </form>
         </tr>
     </table>
 
