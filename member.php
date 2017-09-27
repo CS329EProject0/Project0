@@ -65,6 +65,20 @@
         </tr>
     </table>
 
+    <?php
+    	function addLine() {
+
+    	}
+
+    	if (isset($_GET['addLine']) {
+    		addLine();
+    	}
+
+
+    ?>
+
+
+
     <script type="text/javascript">
       function deleteRow(row)
 {
