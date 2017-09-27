@@ -51,6 +51,27 @@
 		<button class="button" style="vertical-align:middle" onclick="location.href='register.html'"><span>Register</span></button>
     </p>
 
+<div>
+	<center>
+	<table width="50%" border="1" style="text-align: center;">
+    <tr>
+        <td><h3>Name</h3></td>
+        <td><h3>Attending?</h3></td>
+    </tr>
+<?php
+$file_handle = fopen("RSVPList.txt", "rb");
+
+while (!feof($file_handle) ) {
+    $line_of_text = fgets($file_handle);
+    $parts = explode(':', $line_of_text);
+    echo "<tr><td>$parts[0]</td><td>$parts[1]</td></tr>";
+}
+fclose($file_handle);
+?>
+</table>
+</center>
+</div>
+
 
 </body>
 
