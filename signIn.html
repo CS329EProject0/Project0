@@ -44,13 +44,14 @@
 			//Hard-coded login credentials
 			var member = "Attendee"
 			var memberPassword = "Paulineisthebest"
+			var memberPassword2 = "password"
 			var admin = "Pauline"
 			var adminPassword = "Iamthebest"
 
 
 			var userName = document.getElementById("userName").value;
 			var password = document.getElementById("password").value;
-			if ((userName == member) && (password == memberPassword)) {
+			if ((userName == member) && ((password == memberPassword) || (password == memberPassword2))) {
 				console.log("valid registration")
 				window.location = 'member.php'
 			} else if ((userName == admin) && (password == adminPassword)) {
