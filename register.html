@@ -36,20 +36,22 @@
 	</table>
 
 	<p>
-		<button class="button" style="vertical-align:middle" onclick="registerUser()"><span>Register</span></button>
+		<button class="button" style="vertical-align:middle" onclick="registerUser();"><span>Register</span></button>
 	</p>
 
 	<script type="text/javascript">
-	document.getElementById('textForm').onsubmit = function(e) {e.preventDefault();}
+	document.getElementById('textForm').onsubmit = function(e) {e.preventDefault()}
 
 		function registerUser() {
-			alert("This works");
 			var password = document.getElementById('password').value;
 			var confirmPassword = document.getElementById('confirmPassword').value;
-			if ((password == confirmPassword) && (password.length > 7));{
-				window.location = "member.php";
+			if ((password == confirmPassword) && (password.length > 7)) {
+				alert("Registration successful.")
+				window.location = "member.php"
+			} else if (password.length > 7) {
+				alert("Password do not match.")
 			} else {
-				alert("Password do not match.");
+				alert("Ensure password is at least 8 characters long.")
 			}
 		}
 	</script>
