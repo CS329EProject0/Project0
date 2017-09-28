@@ -45,6 +45,7 @@
                     <option value="Soda">Soda</option>
                     <option value="Paper Towels">Paper Towels</option>
                     <option value="Snacks">Snacks</option>
+                    <option value="Other">Other</option>
                 </select>
             </td>
             <td>
