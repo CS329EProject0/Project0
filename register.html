@@ -14,7 +14,7 @@
 	<hr>
 	<table>
 		<tbody>
-			<form id="textForm">
+			<form id="textForm" action="register.php" method="post">
 				<tr>
 					<td><label>Username:</label>
 						<input type="text" name="userName" id="userName">
@@ -30,18 +30,18 @@
 						<input type="password" name="confirmPassword" id="confirmPassword">
 					</td>
 				</tr>
-				
+				<tr>
+					<td>
+						<p>
+							Password must be at least 8 characters long.
+						</p>
+						<button class="button" type="submit" style="vertical-align:middle" ><span>Register</span></button>
+					</td>
+				</tr>
 			</form>
 		</tbody>
 	</table>
-	<p>
-		Password must be at least 8 characters long.
-	</p>
-	<p>
-		<button class="button" style="vertical-align:middle" onclick="location.href='register.php'";><span>Register</span></button>
-	</p>
-
-
+	
 	<script type="text/javascript">
 	document.getElementById('textForm').onsubmit = function(e) {e.preventDefault()}
 
