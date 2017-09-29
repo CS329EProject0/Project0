@@ -1,4 +1,10 @@
 <DOCTYPE! html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="script.js"></script>
+</head>
+
+
 <html>
 
 <!-- calling the webDesign-->
@@ -32,6 +38,29 @@
   		}
   	</style>
 
+
+	<div id="usernameUpdate">
+		<!-- Allows the user to update their username -->
+		<center>
+		<div id="usernameDisplay"><h2>User001</h2></div>
+		<table>
+			<tbody>
+				<form id="textForm">
+					<tr>
+						<td><label>Username:</label>
+							<input type="text" name="userName" id="userName">
+						</td>
+						<td>
+							<input class="button" name="username" type="submit" value="Update" onclick="updateUsername(this);">	
+						</td>
+					</tr>
+				</form>
+			</tbody>
+		</table>
+		</center>
+	</div>
+
+
 	<h1>Your Profile</h1>
 	<hr>
 	<p>Tell us about yourself.</p>
@@ -51,60 +80,53 @@
 		<input type="radio" name="relationToPauline" value="idk">I don't know Pauline but I like to party <br>
 		<input type="radio" name="relationToPauline" value="other">Other <br>
 		<br>
-		<input type="submit" value="Update" onclick="return updateProfileInfo()">
+		<input type="submit" value="Submit" onclick="return updateProfileInfo()">
 		</fieldset>
 	</form>
 
+	<div id="aboutMe">	</div>
+
 	<!-- This will display the user's current profile picture -->
 	<center>
-		<h2>Your profile picture</h2>
-		<img src ="fillerImage.png" alt="ProfilePic" style="width:406px;height:406px;">
-		<form action="/profile_picture_upload.php">
-			<br>
-			<input type="file" name="userProfilePic" id="userProfilePic">
-			<input type="submit" value="Upload Image" name="submit">
-		</form>
+		<div class="main">
+			<hr>
+			<h2>Your profile picture</h2>
+			<form id="uploadimage" action="" method="post" enctype="multipart/form-data">
+			<div id="image_preview"><img id="previewing" src="fillerImage.png" style="width:306px;height:306px; /></div>
+			<hr id="line">
+			<div id="selectImage">
+			<label>Select Your Image</label><br/>
+			<input type="file" name="file" id="file" required />
+			<input type="submit" value="Upload" class="submit" />
+			</div>
+			</form>
+			</div>
+			<div id="message"></div>
 		<br>
 		<hr>
-	</center>
-
-	<!-- Allows the user to update their username -->
-	<center>
-	<h2>Your username</h2>
-	<table>
-		<tbody>
-			<form id="textForm">
-				<tr>
-					<td><label>Username:</label>
-						<input type="text" name="userName" id="userName">
-					</td>
-					<td>
-						<button class="button" button type="submit" onclick="return updateUsername();">Update Username</button>
-						<br>
-						<br>
-					</td>
-				</tr>
-			</form>
-		</tbody>
-	</table>
 	</center>
 
 
 	<!-- Write the code for the updateUsername() and updateProfileInfo() here, within the updateUsername() function you can create a validateUsername() function if you would like, requiring the username to be less than x characters and/or being alphanumeric-->
 
-	<script type="text/javascript">
-	document.getElementById('textForm').onsubmit = function(e) {e.preventDefault();}
+	<script type="text/javascript">	
+		document.getElementById('textForm').onsubmit = function(e) {e.preventDefault();}
+		
 
-		function updateUsername() {
-
+		function updateUsername(el) {
+			var output = document.getElementById('usernameDisplay');
+			output.innerHTML = "<h2>" + document.getElementById("userName").value + "</h2>" ;
 		}
 
-	<script type="text/javascript">
-	document.getElementById("ProfileInfo").onsubmit = function(e) {e.preventDefault();}
 
-		function updateProfileInfo() {
+		function aboutMe(el) {
+			var username;
+			var favFood
+			//innerHTML = Hi I'm username, and my favorite food is favFood.;
 
 		}
+	</script>
 
+	<button onclick="location.href='member.php'">Home</button>
 </body>
 </html>

@@ -7,7 +7,7 @@
 </head>
 
 <body>
-	<div style = "text-align:center;"><img src="https://imgur.com/kpNpKOK.png" width="1000" height="370"><div/>
+	<div style = "text-align:center;"><img src="https://imgur.com/kpNpKOK.png" width="100%" height="auto"><div/>
 
 <div>
 	<center>

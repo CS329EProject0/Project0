@@ -1,6 +1,7 @@
 
 body {
 	background-color: #6bd5c9;
+  font-family: "Arial";
 }
 
 button {
@@ -10,7 +11,7 @@ button {
   border: none;
   color: #e57100;
   text-align: center;
-  font-size: 28px;
+  font-size: 14px;
   padding: 10px;
   width: 200px;
   transition: all 0.5s;
