@@ -1,38 +1,55 @@
 <!DOCTYPE html>
-<html>
 
-<!-- calling the webDesign-->
-	<link rel="stylesheet" href="webDesign.css">
+<html>
+ 
+
 
 <head>
 	<title>Login</title>
-	
+	<link rel="stylesheet" href="other.css">
 </head>
 <body>
-	<h1>User Login</h1>
-	<hr>
-	<table>
+<div id="left"></div>
+<div id="right"></div>
+<div id="top"></div>
+<div id="bottom"></div>
+
+<!-- use div to place things in the middle -->
+    <div class="center">
+	  <h1>User Login</h1>
+	</div>
+    <div class="wrapper">
+		<table>
 		<tbody>
 			<form id="login" method="post">
+			<!-- use div to place things in the middle -->
+			    <div class="wrapper">
 				<tr>
+				
 					<td><label>Username:</label>
-						<input type="text" name="userName" id="userName">
+							<input type="text" name="userName" id="userName">
 					</td>
+
 				</tr>
+
 				<tr>
 					<td><label>Password:</label>
 						<input type="password" name="password" id="password">
 					</td>
 				</tr>
+                </div>
 				<tr>
 					<td>
 						<button type="submit" form="login" value="Submit" onclick="adminOrMember();">Login</button>
 						<button input type="reset" name="reset" value="Reset">Reset</button>
 					</td>
 				</tr>
+				
 			</form>
+
 		</tbody>
 	</table>
+	</div>
 
 
 	
@@ -52,10 +69,10 @@
 			var userName = document.getElementById("userName").value;
 			var password = document.getElementById("password").value;
 			if ((userName == member) && ((password == memberPassword) || (password == memberPassword2))) {
-				console.log("valid registration")
+				console.log("Member login successful.")
 				window.location = 'member.php'
 			} else if ((userName == admin) && (password == adminPassword)) {
-				console.log("valid registration")
+				console.log("Admin login succesful.")
 				window.location = 'adminPage.html'
 			} else {
 				alert("Username or password is unrecognized.")
@@ -164,4 +181,5 @@
 		}
 	</script>
 </body>
+
 </html>
