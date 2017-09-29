@@ -29,7 +29,7 @@
 
 	<?php
 	$file_handle = fopen("RSVPList.txt", "rb");
-	$counter = 0;
+	$counter = -1;
     
 	while (!feof($file_handle)) {
 		$counter++;

@@ -3,4 +3,11 @@ Elyse:Yes:Cups
 Z:Yes:Other
 Uzo:No:None
 Amy:Yes:Snacks
-Nathan:Yes:HotDogs
+Nathan:Yes:Hot Dogs
+Billy:Yes:Tequila
+Sharon:No:None
+Quincy:Yes:Whiskey
+Walter:Yes:Soda
+Armanda:No:None
+David:Yes:Vodka
+Vernon:Yes:Pizza
