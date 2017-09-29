@@ -1,2 +1,6 @@
 The Guy:Yes:Paper Towels
-The Girl:Yes:Soda
+Elyse:Yes:Cups
+Z:Yes:Other
+Uzo:No:None
+Amy:Yes:Snacks
+Nathan:Yes:HotDogs
