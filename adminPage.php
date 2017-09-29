@@ -36,7 +36,13 @@
 	while (!feof($file_handle) ) {
 	    $line_of_text = fgets($file_handle);
 	    $parts = explode(':', $line_of_text);
-	    echo "<form action='adminDelete.php' method='post'><tr><td>$parts[0]</td><td>$parts[1]</td><td>$parts[2]</td><td><input type='submit' name='Delete' class='button' value='Delete'></td></tr></form>";
+	    echo "<form action='delete.php' method='post'><tr><td>$parts[0]</td><td>$parts[1]</td><td>$parts[2]</td><td>
+
+	    	<input type='submit' name='Delete' class='button' value='Delete'>
+	    	<br>
+	    	<a href='delete.php?action=delete'>DELETE</a>
+
+	    	</td></tr></form>";
 	}
 	fclose($file_handle);
 
