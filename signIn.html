@@ -65,10 +65,10 @@
 			var userName = document.getElementById("userName").value;
 			var password = document.getElementById("password").value;
 			if ((userName == member) && ((password == memberPassword) || (password == memberPassword2))) {
-				console.log("valid registration")
+				console.log("Member login successful.")
 				window.location = 'member.php'
 			} else if ((userName == admin) && (password == adminPassword)) {
-				console.log("valid registration")
+				console.log("Admin login succesful.")
 				window.location = 'adminPage.html'
 			} else {
 				alert("Username or password is unrecognized.")
