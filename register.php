@@ -3,11 +3,12 @@
 	    $password = $_POST["password"];
 	    $filename = 'userList.txt';
 
-	    $fp = fopen($filename, 'a+'); //Open your .txt file
-	    fwrite($fp , $userName . ":" . $password . ":" . "\n"); //Now lets write it in there
-	    
-	    fclose($fp); //Finally close our .txt
-	    header('Location: member.php'); 
-    	die();
+	    if ((password == confirmPassword) && (password.length > 7)) {
+	    	$fp = fopen($filename, 'a+'); //Open your .txt file
+	    	fwrite($fp , $userName . ":" . $password . ":" . "\n"); 
+	  		fclose($fp); 
+	    	header('Location: member.php');
+	    }
 
+    	die();
 	?>
