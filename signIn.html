@@ -1,35 +1,48 @@
 <!DOCTYPE html>
-<html>
 
-<!-- calling the webDesign-->
-	<link rel="stylesheet" href="webDesign.css">
+<html>
+ 
+
 
 <head>
 	<title>Login</title>
-	
+	<link rel="stylesheet" href="other.css">
 </head>
 <body>
-	<h1>User Login</h1>
+<div id="enlarge">
+
+<!-- use div to place things in the middle -->
+    <div class="center">
+	  <h1>User Login</h1>
+	</div>
+
 	<hr>
 	<table>
 		<tbody>
 			<form id="login" method="post">
+			<!-- use div to place things in the middle -->
+			    <div class="wrapper">
 				<tr>
+				
 					<td><label>Username:</label>
-						<input type="text" name="userName" id="userName">
+							<input type="text" name="userName" id="userName">
 					</td>
+
 				</tr>
+
 				<tr>
 					<td><label>Password:</label>
 						<input type="password" name="password" id="password">
 					</td>
 				</tr>
+                </div>
 				<tr>
 					<td>
 						<button type="submit" form="login" value="Submit" onclick="adminOrMember();">Login</button>
 						<input type="reset" name="reset" value="Reset">
 					</td>
 				</tr>
+				
 			</form>
 		</tbody>
 	</table>
@@ -162,5 +175,7 @@
 			return valid;
 		}
 	</script>
+</div>
 </body>
+
 </html>
