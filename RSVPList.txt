@@ -11,5 +11,3 @@ Walter:Yes:Soda
 Armanda:No:None
 David:Yes:Vodka
 Vernon:Yes:Pizza
-::None
-::None

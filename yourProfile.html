@@ -44,11 +44,11 @@
 		<fieldset>
 		<legend>About Me</legend>
 		Favorite Food:
-		<input type="text" name="favoriteFood"><br>
+		<input type="text" name="favoriteFood" id="favFood"><br>
 		Favorite Music:
-		<input type="text" name="favoriteMusic"><br>
+		<input type="text" name="favoriteMusic" id="favMusic"><br>
 		Interests:
-		<input type="text" name="Interests"><br>
+		<input type="text" name="Interests" id="interests" placeholder="interest 1, interest 2, etc."><br>
 		Relation to Pauline:<br>
 		<input type="radio" name="relationToPauline" value="friend">Friend <br>
 		<input type="radio" name="relationToPauline" value="family">Family <br>
@@ -56,7 +56,7 @@
 		<input type="radio" name="relationToPauline" value="idk">I don't know Pauline but I like to party <br>
 		<input type="radio" name="relationToPauline" value="other">Other <br>
 		<br>
-		<input type="submit" value="Submit" onclick="return updateProfileInfo()">
+		<input type="submit" value="Submit" onclick="aboutMe();">
 		</fieldset>
 	</form>
 
@@ -88,7 +88,7 @@
 	<!-- Write the code for the updateUsername() and updateProfileInfo() here, within the updateUsername() function you can create a validateUsername() function if you would like, requiring the username to be less than x characters and/or being alphanumeric-->
 
 	<script type="text/javascript">	
-		document.getElementById('textForm').onsubmit = function(e) {e.preventDefault();}
+		document.getElementById('ProfileInfo').onsubmit = function(e) {e.preventDefault();}
 		
 
 		function updateUsername(el) {
@@ -97,10 +97,14 @@
 		}
 
 
-		function aboutMe(el) {
-			var username;
-			var favFood
-			//innerHTML = Hi I'm username, and my favorite food is favFood.;
+		function aboutMe() {
+			var username = document.getElementById("usernameDisplay").value;
+			var favFood = document.getElementById("favFood").value;
+			var favMusic = document.getElementById("favMusic").value;
+			var interests = document.getElementById("interests").value;
+			
+
+			document.getElementById("aboutMe").innerHTML = "<p>Hi! I'm " + username + ", and my favorite food is " + favFood + ". I love listening to " + favMusic + ", and I'm interested in: " +interests+ "</p>";
 
 		}
 	</script>
