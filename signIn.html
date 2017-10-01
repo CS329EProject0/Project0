@@ -6,179 +6,57 @@
 
 <head>
 	<title>Login</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="webDesign.css">
 	<link rel="stylesheet" href="other.css">
 </head>
 <body>
-<div id="left"></div>
-<div id="right"></div>
-<div id="top"></div>
-<div id="bottom"></div>
+
 
 <!-- use div to place things in the middle -->
+<div class="container">
+
     <div class="center">
 	  <h1>User Login</h1>
 	</div>
-    <div class="wrapper">
-		<table>
-		<tbody>
-			<form id="login" method="post">
-			<!-- use div to place things in the middle -->
-			    <div class="wrapper">
-				<tr>
-				
-					<td><label>Username:</label>
-							<input type="text" name="userName" id="userName">
-					</td>
-
-				</tr>
-
-				<tr>
-					<td><label>Password:</label>
-						<input type="password" name="password" id="password">
-					</td>
-				</tr>
-                </div>
-				<tr>
-					<td>
-						<button type="submit" form="login" value="Submit" onclick="adminOrMember();">Login</button>
-						<button input type="reset" name="reset" value="Reset">Reset</button>
-					</td>
-				</tr>
-				
-			</form>
-
-		</tbody>
-	</table>
+	
+	<div class="row">
+	<div class="col-xs-6 center">
+		<form id="login" method="post" action="signin.php">
+		<label>Username:</label>
+		<input type="text" name="userName" id="userName"><br>
+		<label>Password:</label>
+		<input type="password" name="password" id="password">
 	</div>
-
-
+	<div class="col-xs-6 center">
+		<button type="submit" form="login" value="Submit" onclick="adminOrMember();">Login</button>
+		<button input type="reset" name="reset" value="Reset">Reset</button>
+	</div>
+	</div>
+	</form>
+	</div>
 	
 	<!--The below function checks if the input matches the hard-coded admin or member login info-->
 	<script type="text/javascript">
-	document.getElementById('login').onsubmit = function(e) {e.preventDefault();}
-
 		function adminOrMember() {
 			//Hard-coded login credentials
 			var member = "Attendee"
 			var memberPassword = "Paulineisthebest"
 			var memberPassword2 = "password"
-			var admin = "Pauline"
-			var adminPassword = "Iamthebest"
+			var admin = "admin"
+			var adminPassword = "admin"
 
 
 			var userName = document.getElementById("userName").value;
 			var password = document.getElementById("password").value;
 			if ((userName == member) && ((password == memberPassword) || (password == memberPassword2))) {
-				console.log("Member login successful.")
 				window.location = 'member.php'
 			} else if ((userName == admin) && (password == adminPassword)) {
-				console.log("Admin login succesful.")
 				window.location = 'adminPage.html'
-			} else {
-				alert("Username or password is unrecognized.")
-			}
+			} 
 		}
 
-		function validate() {
-			var userName = document.getElementById("userName").value;
-			var password = document.getElementById("password").value;
-			if (validateUsername(userName) && validatePassword(password)) {
-				console.log("valid registration")
-				alert("Passed Validation");
-			}
-			else{
-				alert("Invalid Input");
-			}
-			
-		}
-
-		function validateUsername (userName) {
-			if (userName.length > 5 && userName.length < 11 && firstLetterCheck(userName) && alphanumCheck(userName)) {
-				console.log("userName is valid")
-				return true;
-			}
-			else {
-				console.log("userName is not valid")
-				return false;
-			}		
-		}
-
-		function firstLetterCheck (text) {
-			var letter = text.charAt(0);
-
-			if (letter >= "A" && letter <= "z") {
-				return true;
-			}
-			else {
-				return false;
-			}
-		}
-
-		function alphanumCheck(text) {
-			var valid = true;
-			
-			for (var i = 0; i < text.length; i++) {
-				var letter = text.charAt(i);
-				if ((letter >="A" && letter <= "Z") || (letter >= "a" && letter <= "z") || letter >= 0 && letter <= 9) {
-						valid = true;
-					}
-				else {
-					valid = false;
-				}
-			}
-			return valid;	
-		}
-
-		function validatePassword(password) {
-			if (password.length > 5 && password.length < 11 && alphanumUnderCheck(password) && lowerUpperDigitCheck(password)) {
-				console.log("password is valid")
-				return true;
-			}
-			else {
-				console.log("password is not valid")
-				return false;
-			}
-		}
-
-
-		function alphanumUnderCheck(text) {
-			var valid = false;
-			for (var i = 0; i < text.length; i++) {
-				var letter = text.charAt(i);
-				
-				if (letter >="A" && letter <= "Z" || (letter >= "a" && letter <= "z") || letter >= 0 && letter <= 9 || letter == "_") {
-						valid = true;
-					}
-				else {
-					valid = false;
-				}
-			}
-			return valid;	
-		}
-
-		function lowerUpperDigitCheck (text) {
-			var x = 0;
-			var y = 0;
-			var z = 0;
-			var valid = false;
-			for (var i = 0; i < text.length; i++) {
-				var letter = text.charAt(i);
-				
-				if (letter >= "A" && letter <= "Z" && x == 0) {
-					x++;
-				}
-				if (letter >= "a" && letter <= "z" && y == 0) {
-					y++;
-				}
-				if (letter >= 0 && letter <= 9 && z == 0) {
-					z++;
-				}
-			}
-			if (x + y + z == 3) {
-				valid = true;
-			}
-			return valid;
-		}
 	</script>
 </body>
 

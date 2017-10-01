@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-
-<!-- calling the webDesign-->
-<link rel="stylesheet" href="webDesign.css">
-
+	
 <head>
-<!--page contents -->
-	<title>Member Page</title>
-  <link rel="stylesheet" href="webDesign.css">
+	<!--page contents -->
+	<title>Attendees Page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+	<!-- calling the webDesign-->
+  	<link rel="stylesheet" href="webDesign.css">
 </head>
 <body>
     <div style = "text-align:center;"><img src="https://imgur.com/kpNpKOK.png" width="100%" height="auto"><div/>
@@ -17,7 +17,7 @@
   <center>
   	<div>
 		<center>
-		<table width="100%" style="text-align: center;">
+		<table class="table-striped table-hover" width="100%" style="text-align: center;">
 	    <tr>
 	        <td><h3>Name</h3></td>
 	        <td><h3>Attending?</h3></td>

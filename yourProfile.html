@@ -1,21 +1,17 @@
+
 <DOCTYPE! html>
-<head>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="script.js"></script>
-</head>
-
-
 <html>
-
-<!-- calling the webDesign-->
-<link rel="stylesheet" href="webDesign.css">
-
 <head>
 	<title>Profile Page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="script.js"></script>
+	<link rel="stylesheet" href="webDesign.css">
 </head>
 <body>
 	<!-- Adds animated button functionality -->
-	<div id="usernameUpdate">
+	<div id="usernameUpdate" style="margin-top: 20px;">
 		<!-- Allows the user to update their username -->
 		<center>
 		<div id="usernameDisplay"><h2>User001</h2></div>
@@ -27,7 +23,7 @@
 							<input type="text" name="userName" id="userName">
 						</td>
 						<td>
-							<button class="button" name="username" type="submit" value="Update" onclick="updateUsername(this);">Update</button>
+							<button class="button" name="username" type="submit" value="Update" onclick="updateUsername()">Update</button>
 						</td>
 					</tr>
 				</form>
@@ -36,31 +32,37 @@
 		</center>
 	</div>
 
+	<div class="row" style="margin:20px;">
+		<div class="col-sm-6">
+			<h1>Your Profile</h1>
+			<hr>
+			<p>Tell us about yourself.</p>
+			<form id = "ProfileInfo">
+				<fieldset>
+				<legend>About Me</legend>
+				Favorite Food:
+				<input type="text" name="favoriteFood" id="favFood"><br>
+				Favorite Music:
+				<input type="text" name="favoriteMusic" id="favMusic"><br>
+				Interests:
+				<input type="text" style="width: 300px;" name="Interests" id="interests" placeholder="interest 1, interest 2, etc."><br>
+				Relation to Pauline:<br>
+				<input type="radio" name="relationToPauline" value="friend">Friend <br>
+				<input type="radio" name="relationToPauline" value="family">Family <br>
+				<input type="radio" name="relationToPauline" value="co-worker">Co-worker<br>
+				<input type="radio" name="relationToPauline" value="idk">I don't know Pauline but I like to party <br>
+				<input type="radio" name="relationToPauline" value="other">Other <br>
+				<br>
+				<input type="submit" value="Submit" onclick="aboutMe();">
+				</fieldset>
+			</form>
+		</div>	
+		<div class="col-sm-6" style="padding-top: 100px;">
+			<div id="aboutMe">	</div>
+		</div>
+	</div>
 
-	<h1>Your Profile</h1>
-	<hr>
-	<p>Tell us about yourself.</p>
-	<form id = "ProfileInfo">
-		<fieldset>
-		<legend>About Me</legend>
-		Favorite Food:
-		<input type="text" name="favoriteFood"><br>
-		Favorite Music:
-		<input type="text" name="favoriteMusic"><br>
-		Interests:
-		<input type="text" name="Interests"><br>
-		Relation to Pauline:<br>
-		<input type="radio" name="relationToPauline" value="friend">Friend <br>
-		<input type="radio" name="relationToPauline" value="family">Family <br>
-		<input type="radio" name="relationToPauline" value="co-worker">Co-worker<br>
-		<input type="radio" name="relationToPauline" value="idk">I don't know Pauline but I like to party <br>
-		<input type="radio" name="relationToPauline" value="other">Other <br>
-		<br>
-		<input type="submit" value="Submit" onclick="return updateProfileInfo()">
-		</fieldset>
-	</form>
-
-	<div id="aboutMe">	</div>
+	
 
 	<!-- This will display the user's current profile picture -->
 	<center>
@@ -88,19 +90,23 @@
 	<!-- Write the code for the updateUsername() and updateProfileInfo() here, within the updateUsername() function you can create a validateUsername() function if you would like, requiring the username to be less than x characters and/or being alphanumeric-->
 
 	<script type="text/javascript">	
+		document.getElementById('ProfileInfo').onsubmit = function(e) {e.preventDefault();}
 		document.getElementById('textForm').onsubmit = function(e) {e.preventDefault();}
-		
 
-		function updateUsername(el) {
+		function updateUsername() {
 			var output = document.getElementById('usernameDisplay');
 			output.innerHTML = "<h2>" + document.getElementById("userName").value + "</h2>" ;
 		}
 
 
-		function aboutMe(el) {
-			var username;
-			var favFood
-			//innerHTML = Hi I'm username, and my favorite food is favFood.;
+		function aboutMe() {
+			var username = document.getElementById("userName").value;
+			var favFood = document.getElementById("favFood").value;
+			var favMusic = document.getElementById("favMusic").value;
+			var interests = document.getElementById("interests").value;
+			
+
+			document.getElementById("aboutMe").innerHTML = "<p>Hi! I'm " + username + ", and my favorite food is " + favFood + ". I love listening to " + favMusic + ", and I'm interested in: " +interests+ "</p>";
 
 		}
 	</script>
