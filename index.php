@@ -3,19 +3,23 @@
 
 <head>
   <title>Home Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="webDesign.css">
 </head>
 
 <body>
 	<div style = "text-align:center;"><img src="https://imgur.com/kpNpKOK.png" width="100%" height="auto"><div/>
 
-<div>
+<div class="col-xs-12">
 	<center>
-	<table width="50%" border="1" style="text-align: center;">
+	<table width="75%" class="table-striped table-hover" style="text-align: center;">
+    <thead>
     <tr>
         <td><h3>Name</h3></td>
         <td><h3>Attending?</h3></td>
     </tr>
+    </thead>
 	<?php
 	$file_handle = fopen("RSVPList.txt", "rb");
 

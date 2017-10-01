@@ -13,8 +13,6 @@ $userlist = file('userList.txt');
 $success = false;
 foreach ($userlist as $user) {
     $user_details = explode(':', $user);
-    echo "$user_details[0] : $user_details[1] CHECK WITH $userN : $passW
-    <br>";
     if ($user_details[0] === $userN AND $user_details[1] === $passW) {
         $success = true;
         header("Location:member.php");
