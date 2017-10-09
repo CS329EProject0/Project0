@@ -7,7 +7,6 @@ $userlist = file('userList.txt');
     if ($userN === $admin AND $passW === $admin) {
         $success = true;
         header("Location:adminPage.php");
-        break;
     }
 
 $success = false;
@@ -16,7 +15,6 @@ foreach ($userlist as $user) {
     if ($user_details[0] === $userN AND $user_details[1] === $passW) {
         $success = true;
         header("Location:member.php");
-        break;
     }
 }
 
